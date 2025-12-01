@@ -2,7 +2,6 @@
 #define PATIENT_H
 
 #include <iostream>
-#include <vector>
 #include <string>
 using namespace std;
 
@@ -12,30 +11,38 @@ public:
     string nik;
     int age;
     string address;
-    string qrCode;
     string history;
+    string qrCode;
 
+    // Input data pasien
     void inputData() {
+        cin.ignore();
+
         cout << "Nama   : ";
-        cin >> name;
+        getline(cin, name);
+
         cout << "NIK    : ";
-        cin >> nik;
+        getline(cin, nik);
+
         cout << "Umur   : ";
         cin >> age;
+        cin.ignore();
+
         cout << "Alamat : ";
-        cin >> address;
-        cout << "Riwayat Medis : ";
-        cin >> history;
+        getline(cin, address);
+
+        cout << "Riwayat Medis Singkat : ";
+        getline(cin, history);
     }
 
     void display() {
-        cout << "Nama          : " << name << endl;
-        cout << "NIK           : " << nik << endl;
-        cout << "Umur          : " << age << endl;
-        cout << "Alamat        : " << address << endl;
-        cout << "Riwayat Medis : " << history << endl;
-        cout << "QR     : " << qrCode << endl;
-        cout << "-----------------------------" << endl;
+        cout << "\n=== DATA PASIEN ===\n";
+        cout << "Nama    : " << name << endl;
+        cout << "NIK     : " << nik << endl;
+        cout << "Umur    : " << age << endl;
+        cout << "Alamat  : " << address << endl;
+        cout << "History : " << history << endl;
+        cout << "QR Code : " << qrCode << endl;
     }
 };
 

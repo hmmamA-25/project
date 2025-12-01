@@ -2,7 +2,6 @@
 #define HOSPITALSY_H
 
 #include <vector>
-#include <fstream>
 #include "Patient.h"
 #include "QrGene.h"
 using namespace std;
@@ -17,7 +16,7 @@ public:
         p.inputData();
         p.qrCode = qr.generateQR();
 
-        cout << "QR Code Pasien: " << p.qrCode << "\n\n";
+        cout << "\nQR Code Pasien: " << p.qrCode << "\n";
         database.push_back(p);
     }
 
@@ -29,9 +28,11 @@ public:
     }
 
     void listPatients() {
-        for (auto &p : database) {
-            p.display();
+        if (database.empty()) {
+            cout << "Tidak ada data pasien.\n";
+            return;
         }
+        for (auto &p : database) p.display();
     }
 };
 

@@ -1,10 +1,10 @@
 #ifndef QRGENE_H
 #define QRGENE_H
 
+#include <iostream>
 #include <string>
 #include <cstdlib>
 using namespace std;
-
 class QRGenerator {
 public:
     string generateQR() {
@@ -14,7 +14,6 @@ public:
         for (int i = 0; i < 8; i++) {
             code += chars[rand() % chars.size()];
         }
-
         return code;
     }
 };
