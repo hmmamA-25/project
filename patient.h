@@ -14,7 +14,7 @@ public:
     string history;
     string qrCode;
 
-    // Input data pasien
+    // Input data pasien (FULL GETLINE)
     void inputData() {
         cin.ignore();
 

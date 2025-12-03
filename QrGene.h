@@ -5,6 +5,7 @@
 #include <string>
 #include <cstdlib>
 using namespace std;
+
 class QRGenerator {
 public:
     string generateQR() {
